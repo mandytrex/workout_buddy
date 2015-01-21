@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'goals/index'
+
+  get 'groups/index'
+
+  get 'users/index'
+
   root to: "application#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
