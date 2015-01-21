@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(version: 20150120222542) do
   end
 
   create_table "goals", force: true do |t|
-    t.text     "goals"
+    t.text     "goal"
+    t.string   "theme"
     t.boolean  "achieved"
     t.string   "end_date"
     t.text     "image_url"
@@ -41,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150120222542) do
 
   create_table "groups", force: true do |t|
     t.integer  "coordinator_id"
-    t.string   "theme"
+    t.string   "name"
     t.text     "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"

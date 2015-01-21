@@ -32,10 +32,12 @@ gem 'simplecov', :require => false, :group => :test
 
 gem 'backbars', '~> 0.0.11'
 
-# gem 'devise'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'google_places', '~> 0.27.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -46,3 +48,6 @@ gem 'backbars', '~> 0.0.11'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem "rails-assets-underscore", source: "https://rails-assets.org"
+gem "rails-assets-backbone", source: "https://rails-assets.org"
