@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
-  root to: "session#new"
-
-  get 'goals/index'
+  root 'home#index'
 
   resources :users
-  resources :groups
+  # resources :groups
 
-  get 'home/index' => 'home#index', as: 'home'
+  get 'home/index' => 'home#index'
 
   get 'sessions/new' => 'sessions#new', as: 'login'
   post 'sessions'    => 'sessions#create'
   delete 'sessions'  => 'sessions#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

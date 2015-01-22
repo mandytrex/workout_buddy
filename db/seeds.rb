@@ -83,14 +83,14 @@ summer = Group.create({
 
 
 marathon = Goal.create({
-					goal: "Long Island Marathon",
+					fitness_goal: "Long Island Marathon",
 					theme: "running",
 					achieved: false,
 					end_date: '2015/05/02'
 					})
 
 trx = Goal.create({
-			goal: "TRX every Tuesday for 2015",
+			fitness_goal: "TRX every Tuesday for 2015",
 			theme: "TRX Class",
 			achieved: false,
 			end_date: '2016/01/01',
@@ -110,3 +110,45 @@ mandy.groups << commuters
 
 track.goals << marathon
 gym.goals << trx
+
+activities = ["Running",
+ 							"Walking",
+ 							"Bike-Riding", 
+ 							"Soccer", 
+ 							"Kick-Boxing", 
+ 							"Jogging", 
+ 							"Zumba", 
+ 							"Fitness Classes", 
+ 							"Volleyball",
+ 							"Yoga",
+ 							"Skating",
+ 							"Wrestling",
+ 							"Baseball",
+ 							"Water Sports",
+ 							"Skateboarding",
+ 							"Surfing",
+ 							"Rock Climbing",
+ 							"Tennis",
+ 							"Kayaking",
+ 							"Skiing/Snowboarding",
+ 							"Hockey",
+ 							"Weightlifting",
+ 							"Crossfit",
+ 							"Swimming",
+ 							"Diving",
+ 							"Dance",
+ 							"Cheerleading",
+ 							"Gymnastics",
+ 							"Football",
+ 							"Martial Arts",
+ 							"Lacrosse",
+ 							"Strength Training"
+ 							 ]
+
+
+activities.each do |activity|
+	Activity.create({
+	name: activity
+	})
+end
+

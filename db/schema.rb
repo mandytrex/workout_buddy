@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150120222542) do
   end
 
   create_table "goals", force: true do |t|
-    t.text     "goal"
+    t.string   "fitness_goal"
     t.string   "theme"
     t.boolean  "achieved"
     t.string   "end_date"
@@ -59,8 +59,11 @@ ActiveRecord::Schema.define(version: 20150120222542) do
     t.string   "username"
     t.string   "password_digest"
     t.integer  "age"
-    t.string   "gym"
+    t.string   "gender"
+    t.string   "experience"
     t.text     "image_url"
+    t.string   "days_available"
+    t.string   "hours_available"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

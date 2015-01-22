@@ -13,3 +13,84 @@
  *= require_tree .
  *= require_self
  */
+
+/* ------------------------- NAVBAR STYLING ----------------------- */
+
+#headernavigation{
+    float: right;
+}
+
+header {
+    background: black;
+    height: 100px;
+}
+
+#nav-home, #nav-images, #nav-boards, #nav-users {
+    width: 100%;
+
+}
+
+#navbar {
+    width: 100%;
+    display: inline;
+    margin:0; 
+    color: white; 
+}
+
+#navbar li {
+    position: relative;
+    float:left;
+    padding: 0 10px;
+    letter-spacing: .1em;
+    list-style-type: none;
+}
+
+#navbar .nav_left {
+    float: left;
+}
+
+#navbar .nav_right {
+    position: relative;
+    top: 75px;
+}
+
+#navbar #profile {
+    position: relative;
+    top: 56px;
+}
+
+#navbar #search form {
+    margin: 35px 145px 35px 20px;   
+}
+
+.search_submit>input[type=submit], input[type=submit] {
+    padding: 2px 10px;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+#navbar input[type=text], .url_box>input[type=text]  {
+    color: black;
+}
+
+#thumb_avatar {
+    max-height: 75px;
+    padding-right: 8px;
+    position: relative;
+    top: 15px;
+}
+
+#navbar .divider, #navbar #divider span  {
+    color: #f0ff00;
+}
+
+#logo {
+    width: 160px;
+}
+
+/*////////////////////////////////////////////////////////////*/
+

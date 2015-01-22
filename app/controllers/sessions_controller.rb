@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 	def new
 		if session[:current_user_id]
-			redirect_to home_path
+			redirect_to root_path
 		end
 	end
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 	def destroy
 		session[:current_user_id] = nil
 		flash[:logout] = "You have successfully logged out"
-		redirect to root_path
+		redirect_to root_url
 	end
 
 end

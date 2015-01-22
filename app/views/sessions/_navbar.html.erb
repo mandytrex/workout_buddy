@@ -1,0 +1,31 @@
+
+
+<!-- CLASS NAV RIGHT  -->
+<div id="headernavigation">
+
+<% if navbar.include? (:all_users) %>
+	<li class="nav_right">
+		<%= link_to "Users", users_path %></li><li class="divider nav_right">|</li>
+	</li>
+<% end %>
+
+<% if navbar.include? (:welcome) %>
+	<li class="nav_right" id="profile">
+		<span>Welcome, <%= current_user.username.capitalize %>!</span><br>
+		<%= link_to "Profile", user_path(current_user) %> <span class="divider" id="divider">|</span> <%= link_to "Log Out", sessions_path, method: :delete %>
+	</li>
+	<li><img src="<%= current_user.image_url %>" id="thumb_avatar"></li>
+<% end %>
+
+<% if navbar.include? (:sign_up) %>
+	<li class="nav_right">
+		<%= link_to "Sign Up", new_user_path %></li><li class="divider  nav_right">|</li>
+	</li>
+<% end %>
+
+<% if navbar.include? (:log_in) %>
+	<li class="nav_right">
+		<%= link_to "Log In", login_path %>
+	</li>
+<% end %>
+</div>

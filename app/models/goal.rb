@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-	validates :goal, presence: true
+	validates :fitness_goal, presence: true
 	
 	belongs_to :group
 end
