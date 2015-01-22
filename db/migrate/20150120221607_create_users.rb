@@ -12,7 +12,17 @@ class CreateUsers < ActiveRecord::Migration
         t.string :days_available
         t.string :hours_available
 
+        t.references :partner, index: true
+
     	t.timestamps
     end
+
+    create_table :partner_requests do |t|
+      t.integer :requester_id
+      t.integer :receiver_id
+      t.text :message
+      t.timestamps
+    end
+
   end
 end

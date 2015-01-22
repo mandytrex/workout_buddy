@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-Partner.destroy_all
 Activity.destroy_all
 Goal.destroy_all
 
@@ -81,56 +80,6 @@ drew = User.create({
 	image_url: "http://i.imgur.com/UluUsqx.jpg"
 	})
 
-gym = Partner.create({
- 			coordinator_id: nellie.id,
- 			name: "Gym Beginners"
- 			})
-
-commuters = Partner.create({
- 				coordinator_id: drew.id,
- 				name: "Commuter Cardio"
- 				})
-
-track = Partner.create({
- 				coordinator_id: joe.id,
- 				name: "Track Stars"
- 				})
-
-summer = Partner.create({
- 				coordinator_id: lauren.id,
- 				name: "Lauren Amanda"
- 				})
-
-
-marathon = Goal.create({
-					fitness_goal: "Long Island Marathon",
-					theme: "running",
-					achieved: false,
-					end_date: '2015/05/02'
-					})
-
-trx = Goal.create({
-			fitness_goal: "TRX every Tuesday for 2015",
-			theme: "TRX Class",
-			achieved: false,
-			end_date: '2016/01/01',
-			image_url: "http://thestudiomadison.com/wp-content/uploads/2013/01/Yoga-TRX-3.jpg"
-			})
-
-
-mandy.partners << track
-mandy.partners << summer
-joe.partners << track
-lauren.partners << summer
-lauren.partners << commuters
-drew.partners << commuters
-nellie.partners << gym
-drew.partners << gym
-
-
-
-track.goals << marathon
-gym.goals << trx
 
 activities = ["Running",
  							"Walking",
@@ -141,13 +90,11 @@ activities = ["Running",
  							"Fitness Classes", 
  							"Volleyball",
  							"Yoga",
- 							"Skating",
  							"Wrestling",
  							"Baseball",
  							"Water Sports",
  							"Rock Climbing",
  							"Tennis",
- 							"Kayaking",
  							"Skiing/Snowboarding",
  							"Hockey",
  							"Weightlifting",

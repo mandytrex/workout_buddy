@@ -2,7 +2,7 @@
 <br>
 <%= image_tag(@user.image_url, :alt => "avatar") %>
 <br>
-<%= @user.first_name %> <%= @user.last_name %>
+<%= @user.first_name %> <%= @user.email %>
 <br>
 <% if current_user == @user %>
 			<%= link_to "Edit User", edit_user_path(@user) %>

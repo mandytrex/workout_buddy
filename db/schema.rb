@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122162304) do
+ActiveRecord::Schema.define(version: 20150122194519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,32 +29,31 @@ ActiveRecord::Schema.define(version: 20150122162304) do
   end
 
   create_table "goals", force: true do |t|
-    t.string   "fitness_goal"
+    t.string   "goal_name"
     t.string   "theme"
     t.boolean  "achieved"
     t.string   "end_date"
     t.text     "image_url"
-    t.boolean  "public"
-    t.integer  "partner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "partners", force: true do |t|
-    t.integer  "coordinator_id"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "goals_users", id: false, force: true do |t|
+    t.integer "goal_id", null: false
+    t.integer "user_id", null: false
   end
 
-  create_table "partners_users", id: false, force: true do |t|
-    t.integer "user_id",    null: false
-    t.integer "partner_id", null: false
+  create_table "partner_requests", force: true do |t|
+    t.integer  "requester_id"
+    t.integer  "receiver_id"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
-    t.string   "last_name"
+    t.string   "email"
     t.string   "username"
     t.string   "password_digest"
     t.integer  "age"
@@ -63,8 +62,11 @@ ActiveRecord::Schema.define(version: 20150122162304) do
     t.text     "image_url"
     t.string   "days_available"
     t.string   "hours_available"
+    t.integer  "partner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["partner_id"], name: "index_users_on_partner_id", using: :btree
 
 end
