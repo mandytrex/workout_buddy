@@ -35,6 +35,9 @@
   <%= f.select :experience, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]) %>
 </div>
 
+<div class="input">
+<%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name %>
+</div>
 
 <% if new_user %>
   <div class="input">
