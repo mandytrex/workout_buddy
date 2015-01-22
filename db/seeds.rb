@@ -14,7 +14,7 @@ Goal.destroy_all
 mandy = User.create({
 	username: "mandytrex",
 	first_name: "Amanda",
-	last_name: "Trexler",
+	email: "amandatrexler1012@gmail.com",
 	age: 23,
 	experience: 4,
 	gender: "female",
@@ -28,7 +28,7 @@ mandy = User.create({
 joe = User.create({
 	username: "joenapo",
 	first_name: "Joe",
-	last_name: "Napoleon",
+	email: "joenapoleon03@gmail.com",
 	age: 21,
 	experience: 5,
 	gender: "male",
@@ -42,7 +42,7 @@ joe = User.create({
 lauren = User.create({
 	username: "laurenprief",
 	first_name: "Lauren",
-	last_name: "Priefer",
+	email: "lenpxoxo@aol.com",
 	age: 23,
 	experience: 4,
 	gender: "female",
@@ -56,7 +56,7 @@ lauren = User.create({
 nellie = User.create({
 	username: "ntrexler",
 	first_name: "Nellie",
-	last_name: "Trexler",
+	email: "nellietrexler@gmail.com",
 	age: 64,
 	experience: 2,
 	gender: "female",
@@ -70,7 +70,7 @@ nellie = User.create({
 drew = User.create({
 	username: "drewreynolds",
 	first_name: "Drew",
-	last_name: "Reynolds",
+	email: "amanda.trexler@baruchmail.cuny.edu",
 	age: 22,
 	experience: 3,
 	gender: "male",

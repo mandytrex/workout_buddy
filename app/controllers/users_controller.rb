@@ -25,6 +25,30 @@ class UsersController < ApplicationController
 			render :new
 		end
 	end
+
+	def edit
+		@user = User.find(params[:id])
+		if @user != current_user
+			redirect_to @user
+		end
+	end
+
+	def update
+		@user = User.find(params[:id])
+		if @user != current_user
+			redirect_to users_path
+		else
+			if @user.update(user_params)
+				redirect_to @user
+			else
+				render :edit
+			end
+		end
+	end
+
+	# def invite
+	# 	current_user.invite(@user)
+	# end
 	
 	private 
 	def user_params
