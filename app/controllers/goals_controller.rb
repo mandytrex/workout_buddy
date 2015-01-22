@@ -9,6 +9,9 @@ class GoalsController < ApplicationController
   end
 
   def create
+    @goal = Goal.create(goal_params)
+    @user_id = session[:current_user_id]
+    @goal.make_goal_for_user(@user_id)
   end
 
   private 

@@ -9,6 +9,7 @@
 User.destroy_all
 Activity.destroy_all
 Goal.destroy_all
+PartnerRequest.destroy_all
 
 mandy = User.create({
 	username: "mandytrex",
@@ -81,6 +82,24 @@ drew = User.create({
 	})
 
 
+PartnerRequest.create({
+	requester_id: mandy.id,
+	receiver_id: joe.id,
+	message: "Please be my partner!"
+	})
+
+PartnerRequest.create({
+	requester_id: nellie.id,
+	receiver_id: lauren.id,
+	message: "Want to be partners?"
+	})
+
+PartnerRequest.create({
+	requester_id: drew.id,
+	receiver_id: nellie.id,
+	message: "You seem cool, let's partner up."
+	})
+
 activities = ["Running",
  							"Walking",
  							"Bike-Riding", 
@@ -113,3 +132,4 @@ activities.each do |activity|
 	name: activity
 	})
 end
+

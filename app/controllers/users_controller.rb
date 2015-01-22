@@ -45,10 +45,6 @@ class UsersController < ApplicationController
 			end
 		end
 	end
-
-	# def invite
-	# 	current_user.invite(@user)
-	# end
 	
 	private 
 	def user_params
