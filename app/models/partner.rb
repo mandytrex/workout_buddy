@@ -1,4 +1,4 @@
-class Group < ActiveRecord::Base
+class Partner < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 
 	has_many :goals, dependent: :destroy

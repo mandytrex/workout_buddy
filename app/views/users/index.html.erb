@@ -7,8 +7,8 @@ Username: <%= user.username %>
 <br>
 <%= image_tag(user.image_url, :alt => "avatar") %>
 <br>
-<% user.groups.each do |group| %>
-Groups: <%= group.name %>
+<% user.partners.each do |partner| %>
+Partner: <%= partner.name %>
 <% end %>
 <br><br>
 <% end %>

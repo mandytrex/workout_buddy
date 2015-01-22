@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
 	validates :username, presence: true, uniqueness: true
 
 	has_secure_password
-	has_and_belongs_to_many :groups
+	has_and_belongs_to_many :partners
 	has_and_belongs_to_many :activities
 end

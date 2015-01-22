@@ -25,6 +25,15 @@
     <%= f.text_field :age %>
  </div>
 
+ <div class="input">
+    <%= f.label :gender, "Gender:" %>
+    <%= f.select :gender, options_for_select([["Select One", ""], "male", "female"]) %>
+ </div>
+
+<div class="input">
+  <%= f.label :experience, "Experience Level:" %>
+  <%= f.select :experience, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]) %>
+</div>
 
 <% if new_user %>
   <div class="input">

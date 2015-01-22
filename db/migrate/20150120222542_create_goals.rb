@@ -7,7 +7,7 @@ class CreateGoals < ActiveRecord::Migration
     	t.string :end_date
     	t.text :image_url
     	t.boolean :public
-    	t.references :group
+    	t.references :partner
 
     	t.timestamps
     end

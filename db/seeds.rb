@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-Group.destroy_all
+Partner.destroy_all
 Activity.destroy_all
 Goal.destroy_all
 
@@ -16,6 +16,10 @@ mandy = User.create({
 	first_name: "Amanda",
 	last_name: "Trexler",
 	age: 23,
+	experience: 4,
+	gender: "female",
+	days_available: "Mon, Wed, Fri, Sat, Sun",
+	hours_available: "morning, evening",
 	password: "amanda",
 	password_confirmation: "amanda",
 	image_url: "http://i.imgur.com/lL29IFg.jpg"
@@ -26,6 +30,10 @@ joe = User.create({
 	first_name: "Joe",
 	last_name: "Napoleon",
 	age: 21,
+	experience: 5,
+	gender: "male",
+	days_available: "Mon, Tues, Wed, Thu, Fri, Sat, Sun",
+	hours_available: "morning, evening",
 	password: "joe",
 	password_confirmation: "joe",
 	image_url: "http://i.imgur.com/Getdhxt.jpg"
@@ -36,6 +44,10 @@ lauren = User.create({
 	first_name: "Lauren",
 	last_name: "Priefer",
 	age: 23,
+	experience: 4,
+	gender: "female",
+	days_available: "Tues, Thu, Sat",
+	hours_available: "morning",
 	password: "lauren",
 	password_confirmation: "lauren",
 	image_url: "http://i.imgur.com/6W17q9d.jpg"
@@ -46,6 +58,10 @@ nellie = User.create({
 	first_name: "Nellie",
 	last_name: "Trexler",
 	age: 64,
+	experience: 2,
+	gender: "female",
+	days_available: "Mon, Tues, Wed, Thu, Fri, Sat, Sun",
+	hours_available: "morning, afternoon",
 	password: "nellie",
 	password_confirmation: "nellie",
 	image_url: "http://i.imgur.com/THYyxel.jpg"
@@ -56,29 +72,33 @@ drew = User.create({
 	first_name: "Drew",
 	last_name: "Reynolds",
 	age: 22,
+	experience: 3,
+	gender: "male",
+	days_available: "Mon, Thu, Sun",
+	hours_available: "evening",
 	password: "drew",
 	password_confirmation: "drew",
 	image_url: "http://i.imgur.com/UluUsqx.jpg"
 	})
 
-gym = Group.create({
+gym = Partner.create({
  			coordinator_id: nellie.id,
  			name: "Gym Beginners"
  			})
 
-commuters = Group.create({
+commuters = Partner.create({
  				coordinator_id: drew.id,
  				name: "Commuter Cardio"
  				})
 
-track = Group.create({
+track = Partner.create({
  				coordinator_id: joe.id,
  				name: "Track Stars"
  				})
 
-summer = Group.create({
+summer = Partner.create({
  				coordinator_id: lauren.id,
- 				name: "Summer, Here We Come!"
+ 				name: "Lauren Amanda"
  				})
 
 
@@ -98,14 +118,15 @@ trx = Goal.create({
 			})
 
 
-mandy.groups << track
-joe.groups << track
-lauren.groups << summer
-drew.groups << commuters
-nellie.groups << gym
-mandy.groups << gym
-nellie.groups << summer
-mandy.groups << commuters
+mandy.partners << track
+mandy.partners << summer
+joe.partners << track
+lauren.partners << summer
+lauren.partners << commuters
+drew.partners << commuters
+nellie.partners << gym
+drew.partners << gym
+
 
 
 track.goals << marathon
@@ -115,8 +136,7 @@ activities = ["Running",
  							"Walking",
  							"Bike-Riding", 
  							"Soccer", 
- 							"Kick-Boxing", 
- 							"Jogging", 
+ 							"Kick-Boxing",  
  							"Zumba", 
  							"Fitness Classes", 
  							"Volleyball",
@@ -125,8 +145,6 @@ activities = ["Running",
  							"Wrestling",
  							"Baseball",
  							"Water Sports",
- 							"Skateboarding",
- 							"Surfing",
  							"Rock Climbing",
  							"Tennis",
  							"Kayaking",
@@ -135,13 +153,10 @@ activities = ["Running",
  							"Weightlifting",
  							"Crossfit",
  							"Swimming",
- 							"Diving",
  							"Dance",
- 							"Cheerleading",
  							"Gymnastics",
  							"Football",
  							"Martial Arts",
- 							"Lacrosse",
  							"Strength Training"
  							 ]
 
@@ -151,4 +166,3 @@ activities.each do |activity|
 	name: activity
 	})
 end
-
