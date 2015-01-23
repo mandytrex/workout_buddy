@@ -7,9 +7,7 @@ Username: <%= user.username %>
 <br>
 <%= image_tag(user.image_url, :alt => "avatar") %>
 <br>
-<% user.partners.each do |partner| %>
-Partner: <%= partner.name %>
-<% end %>
+Partner: <%= user.partner %>
 <br><br>
 <% end %>
 </div>
