@@ -36,7 +36,8 @@
 </div>
 
 <div class="input">
-<%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name %>
+  <%= f.label :activities, "Select Activities:" %>
+  <%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name %>
 </div>
 
 <% if new_user %>
