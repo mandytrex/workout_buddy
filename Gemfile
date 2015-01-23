@@ -41,6 +41,8 @@ gem 'google_places', '~> 0.27.0'
 
 gem 'yelpster', '~> 1.3.0'
 
+gem "paperclip", "~> 4.2"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
