@@ -4,6 +4,7 @@
 <br>
 <%= @user.first_name %> <%= @user.email %>
 <br>
+
 <% if current_user == @user %>
 			<%= link_to "Edit Account", edit_user_path(@user) %>
 		<% end %>

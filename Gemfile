@@ -43,6 +43,7 @@ gem 'yelpster', '~> 1.3.0'
 
 gem "paperclip", "~> 4.2"
 
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use unicorn as the app server
 # gem 'unicorn'
