@@ -16,8 +16,8 @@
  </div>
 
   <div class="input">
-    <%= f.label :image_url, "Photo URL" %>
-    <%= f.text_field :image_url %>
+    <%= f.label :avatar, "Photo URL" %>
+    <%= f.text_field :avatar %>
  </div>
 
  <div class="input">
@@ -38,6 +38,11 @@
 <div class="input">
   <%= f.label :activities, "Select Activities:" %>
   <%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name %>
+</div>
+
+<div class="input">
+  <%= f.label :days, "Select Availability:" %>
+  <%= f.collection_check_boxes :day_ids, Day.all, :id, :day %>
 </div>
 
 <% if new_user %>
