@@ -1,5 +1,5 @@
-App.Views.collectionView = Backbone.View.extend({
-	el: '#collection',
+App.Views.UsersListView = Backbone.View.extend({
+	el: '#users-list',
 	initialize: function(){
 		this.listenTo(this.collection, 'reset', this.render);
 	},
@@ -8,7 +8,7 @@ App.Views.collectionView = Backbone.View.extend({
 		this.$el.empty();
 		for (var i = 0; i < this.collection.models.length; i++){
 			var user = this.collection.at(i);
-			var view = new App.Views.userListView({ model: user});
+			var view = new App.Views.UserView({ model: user});
 				this.$el.append(view.$el);
 		};
 	}

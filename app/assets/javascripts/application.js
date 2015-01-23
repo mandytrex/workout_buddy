@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require underscore
 //= require backbone
 //= require handlebars
@@ -30,10 +29,16 @@ var App = {
 	Views: {}, 
 	Routers: {},
 	initialize: function() {
-    console.log("Loaded, bro");
-    App.users = new App.Collections.userCollection();
-    App.collectionView = new App.Views.collectionView({ collection:App.users});
-    App.users.fetch({reset: true});
+		if ($('#users-list').length) {
+			console.log("Loaded, bro");
+    	App.users = new App.Collections.UserCollection();
+    	App.usersView = new App.Views.UsersListView({ collection:App.users});
+    	App.users.fetch({reset: true});
+
+    	// App.requests = new App.Collections.PartnerRequestCollection();
+    	// App.requestsView = new App.Views.PartnerRequestListView({ collection:App.requests});
+    	// App.requests.fetch({reset: true});
+		}
   }
 };
 

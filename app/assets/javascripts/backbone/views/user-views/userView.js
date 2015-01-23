@@ -1,4 +1,4 @@
-App.Views.userListView = Backbone.View.extend({
+App.Views.UserView = Backbone.View.extend({
 	tagName: 'div', 
 	className: 'user-info', 
 	initialize: function(){

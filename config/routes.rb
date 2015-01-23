@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users
+
+  get 'partner_requests' => 'partner_requests#index'
   # resources :groups
 
   get 'home/index' => 'home#index'
