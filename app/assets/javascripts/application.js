@@ -23,9 +23,20 @@
 //= require_tree ./backbone/views
 //= require_tree ./templates
 //= require_tree .
+
 var App = {
 	Models: {}, 
 	Collections: {}, 
 	Views: {}, 
-	Routers: {}
+	Routers: {},
+	initialize: function() {
+    console.log("Loaded, bro");
+    App.users = new App.Collections.userCollection();
+    App.collectionView = new App.Views.collectionView({ collection:App.users});
+    App.users.fetch({reset: true});
+  }
 };
+
+$(function() {
+  App.initialize();
+});

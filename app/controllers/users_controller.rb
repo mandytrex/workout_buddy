@@ -1,52 +1,57 @@
 class UsersController < ApplicationController
 
-  def index
-  	@users = User.all
-  end
+ def index
+ 	#make function so it is all except current user
+ 	@users = User.all
+  respond_to do |format|
+		format.html { render :index }
+		format.json { render json: @users }
+	end
+ end
 
-  def show
-  	@user = User.find(params[:id])
+	def show
+		@user = User.find(params[:id])
 		@current_user = current_user
-  end
+ end
 
-  def new
+ def new
 		@user = User.new
 		@activities = Activity.all
 	end
 
-	def create
-		@user = User.new(user_params)
-		@activities = Activity.all
-		@user_id = session[:current_user_id]
-		if @user.save
-			session[:current_user_id] = @user.id
-			redirect_to @user
+ def create
+ 	@user = User.new(user_params)
+	@activities = Activity.all
+	@user_id = session[:current_user_id]
+	if @user.save
+		session[:current_user_id] = @user.id
+		redirect_to @user
+	else
+		render :new
+	end
+end
+
+def edit
+	@user = User.find(params[:id])
+	if @user != current_user
+		redirect_to @user
+	end
+end
+
+def update
+	@user = User.find(params[:id])
+	if @user != current_user
+		redirect_to users_path
+	else
+		if @user.update(user_params)
+		redirect_to @user
 		else
-			render :new
+			render :edit
 		end
 	end
+end
 
-	def edit
-		@user = User.find(params[:id])
-		if @user != current_user
-			redirect_to @user
-		end
-	end
-
-	def update
-		@user = User.find(params[:id])
-		if @user != current_user
-			redirect_to users_path
-		else
-			if @user.update(user_params)
-				redirect_to @user
-			else
-				render :edit
-			end
-		end
-	end
-
-	def destroy
+def destroy
 		@user = User.find(params[:id])
 		# might not need the below statement, because can't get to edit page unless logged in.
 		# to close session add:  session[:current_user_id] = nil
