@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20150122194519) do
     t.integer  "age"
     t.string   "gender"
     t.string   "experience"
-    t.text     "image_url"
+    t.text     "avatar"
     t.string   "days_available"
     t.string   "hours_available"
     t.integer  "partner_id"
