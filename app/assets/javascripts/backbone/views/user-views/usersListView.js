@@ -12,5 +12,8 @@ App.Views.UsersListView = Backbone.View.extend({
 				this.$el.append(view.$el);
 		};
 	}
+	// events: {
+	// 	'click .partner-request': ''
+	// }
 
 })
