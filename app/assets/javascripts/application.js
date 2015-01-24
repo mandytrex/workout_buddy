@@ -29,18 +29,19 @@ var App = {
 	Views: {}, 
 	Routers: {},
 	initialize: function() {
-		// if ($('#users-list').length) {
+		if ($('#users-list').length) {
 			console.log("Loaded, bro");
     	App.users = new App.Collections.UserCollection();
     	App.usersView = new App.Views.UsersListView({ collection:App.users});
     	App.users.fetch({reset: true});
-		// }
-		// $('button.request').on('click', 'button.request', function() {
-		// 	App.requests = new App.Collections.PartnerRequestCollection();
-  //   	App.requestsView = new App.Views.PartnerRequestListView({ collection:App.requests});
-  //   	App.requests.fetch({reset: true});
-		// })
-  }
+		}
+		if ($('#requests-list').length) {
+			console.log("Requests loaded.")
+			App.requests = new App.Collections.PartnerRequestCollection();
+    	App.requestsView = new App.Views.PartnerRequestListView({ collection:App.requests});
+    	App.requests.fetch({reset: true});
+			}
+ 	 }
 };
 
 $(function() {

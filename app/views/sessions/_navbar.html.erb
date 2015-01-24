@@ -14,7 +14,7 @@
 		<span>Welcome, <%= current_user.username.capitalize %>!</span><br>
 		<%= link_to "Profile", user_path(current_user) %> <span class="divider" id="divider">|</span> <%= link_to "Log Out", sessions_path, method: :delete %>
 		<span class="divider" id="divider"> | </span>
-	<button class="request">Requests</button>
+	<%= link_to "Requests", partner_requests_path %>
 	</li>
 	<li><img src="<%= current_user.avatar %>" id="thumb_avatar"></li>
 <% end %>

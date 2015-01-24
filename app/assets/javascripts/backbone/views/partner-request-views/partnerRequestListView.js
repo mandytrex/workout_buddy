@@ -1,5 +1,5 @@
 App.Views.PartnerRequestListView = Backbone.View.extend({
-	el: '#users-list',
+	el: '#requests-list',
 	initialize: function(){
 		console.log('New Partner Request List View created')
 		this.listenTo(this.collection, 'reset', this.render);
