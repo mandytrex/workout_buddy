@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require handlebars
+//= require bootstrap.min
 //= require_self
 //= require_tree ./backbone/routers
 //= require_tree ./backbone/models

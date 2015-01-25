@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users
+  resources :goals
+  resources :partner_requests
 
-  get 'partner_requests' => 'partner_requests#index'
-  # resources :groups
+  # get 'partner_requests' => 'partner_requests#index'
 
   get 'home/index' => 'home#index'
 

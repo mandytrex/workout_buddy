@@ -1,33 +1,52 @@
+<nav class ="navbar navbar-default navbar-static" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+    	<a href="/" class="navbar-brand" id="teal">Workout Buddy</a>
+		</div>
+<!-- 		<div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+    <ul class="nav navbar-nav">
+    	<% if navbar.include? (:welcome) %>
+			<li class="active hi" id="welcome">
+				<a href="/users/<%= current_user.id%>">
+			  Welcome back, <%= current_user.username.capitalize %>! 
+			</a>
+			</li>
 
+			<li class="active hi">
+					<%= link_to "Users", users_path %>
+			</li>
+			
+			<li class="active hi">
+				<a href='/partner_requests/<%= current_user.id%>'>
+					My Requests
+				</a>
+			</li>
+			
+			<li class="active hi">
+				<a href='/goals/<%= current_user.id%>'>
+					My Goals
+				</a>
+			</li>
 
-<!-- CLASS NAV RIGHT  -->
-<div id="headernavigation">
+			<li class="active hi">
+				<%= link_to "Log Out", sessions_path, method: :delete %>
+			</li>
+	</ul>
+<!-- 	</div> -->
+	<% end %>
 
-<% if navbar.include? (:all_users) %>
-	<li class="nav_right">
-		<%= link_to "Users", users_path %></li><li class="divider nav_right">|</li>
-	</li>
-<% end %>
+		<% if navbar.include? (:log_in) %>
+<!-- 		<div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+			<ul class="nav navbar-nav">
+				
+				<li class="active hi">
+					<%= link_to "Log In", login_path %>
+				</li>
+				<li class="active hi">
+					<%= link_to "Sign Up", new_user_path %>
+				</li>
+			<% end %>
 
-<% if navbar.include? (:welcome) %>
-	<li class="nav_right" id="profile">
-		<span>Welcome, <%= current_user.username.capitalize %>!</span><br>
-		<%= link_to "Profile", user_path(current_user) %> <span class="divider" id="divider">|</span> <%= link_to "Log Out", sessions_path, method: :delete %>
-		<span class="divider" id="divider"> | </span>
-	<%= link_to "Requests", partner_requests_path %>
-	</li>
-	<li><img src="<%= current_user.avatar %>" id="thumb_avatar"></li>
-<% end %>
-
-<% if navbar.include? (:sign_up) %>
-	<li class="nav_right">
-		<%= link_to "Sign Up", new_user_path %></li><li class="divider nav_right">|</li>
-	</li>
-<% end %>
-
-<% if navbar.include? (:log_in) %>
-	<li class="nav_right">
-		<%= link_to "Log In", login_path %>
-	</li>
-<% end %>
-</div>
+			</ul>
+	</div>
+</nav>

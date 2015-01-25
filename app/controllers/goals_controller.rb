@@ -1,8 +1,14 @@
 class GoalsController < ApplicationController
   def index
+    @goals = Goal.all
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @goals }
+    end
   end
 
   def show
+    @goal = Goal.find(params[:id])
   end
 
   def new
@@ -16,7 +22,7 @@ class GoalsController < ApplicationController
 
   private 
 	def goal_params
-		params.require(:goal).permit(:fitness_goal, :theme, :acheived, :image_url, :end_date)
+		params.require(:goal).permit(:goal_name, :theme, :achieved, :image_url, :end_date)
 	end
 
 end

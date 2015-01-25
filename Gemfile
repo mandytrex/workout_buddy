@@ -44,6 +44,8 @@ gem "paperclip", "~> 4.2"
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
+gem 'bootstrap_form'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

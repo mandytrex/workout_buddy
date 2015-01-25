@@ -1,26 +1,20 @@
-<a href="/users/{{id}}">
-<div class="user-image">
-  <img src="{{avatar}}"/>
-</div></a>
+<div class="col-xs-6 col-md-4 col-centered">
+  <div class="user content">
 
-<div class="user">
-  <h1>
-    {{username}}
-  </h1>
-  <button class="partner-request">Be My Partner</button>
-  <p>
-    {{first_name}}
-  </p>
-  <p>
-    {{age}}
-  </p>
-  <p>
-    {{email}}
-  </p>
-  <p>
-    {{gender}}
-  </p>
-  <p>
-    {{experience}}
-  </p>
+    <h2> {{username}}</h2>
+
+     <div class="preview">
+     <a href="/users/{{id}}">
+      <img src="{{avatar}}"/>
+      </a>
+      </div>
+      
+       <p> {{first_name}} | Age: {{age}} | Fitness Level: {{experience}} </p>
+       <p> {{activities}} </p>
+        <button id="partner-request" class="btn btn-primary">Partner Up!</button>
+  </div>
+<br>
+<br>
+<br>
+<br>
 </div>
