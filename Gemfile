@@ -46,6 +46,8 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 gem 'bootstrap_form'
 
+gem 'twilio-ruby', '~> 3.12'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

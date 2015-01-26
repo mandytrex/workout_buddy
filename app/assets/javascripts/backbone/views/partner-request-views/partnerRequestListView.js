@@ -13,5 +13,4 @@ App.Views.PartnerRequestListView = Backbone.View.extend({
 				this.$el.append(view.$el);
 		};
 	}
-
 })

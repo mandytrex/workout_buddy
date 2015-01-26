@@ -3,6 +3,7 @@ class UsersController < ApplicationController
  def index
  	#make function so it is all except current user
  	@users = User.all
+ 	@user_id = session[:current_user_id]
   respond_to do |format|
 		format.html { render :index }
 		format.json { render json: @users }

@@ -9,13 +9,11 @@
 </head>
 <body>
 
-
-    <% if session[:current_user_id] %>
+  <% if session[:current_user_id] %>
       <%= render partial: 'sessions/navbar', locals: { navbar: [:welcome] } %>
     <% else %>
       <%= render partial: 'sessions/navbar', locals: { navbar: [:log_in] } %>
     <% end %>
-
 <%= yield %>
 
 </body>

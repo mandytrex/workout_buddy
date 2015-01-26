@@ -1,2 +1,23 @@
 <h1>Partner Requests#show</h1>
-<p>Find me in app/views/partner_requests/show.html.erb</p>
+
+
+<h2>They want to partner up! </h2>
+<br>
+
+<% @partner_requests.each do |request| %>
+
+	<div class="col-xs-6 col-md-4 col-centered">
+		<div class="user content thumbnail">
+<br>
+			<p class="request-info"> Request from:
+			<br>
+			<%= request.requester.first_name %> 
+			<br>
+			</p>
+
+			<button class="btn btn-primary accept">Accept!</button> <button class="btn btn-primary deny">Deny!</button>
+<br><br>
+		</div>
+	</div>
+
+<% end %>

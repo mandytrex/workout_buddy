@@ -6,29 +6,29 @@
 <!-- 		<div class="collapse navbar-collapse navbar-ex1-collapse"> -->
     <ul class="nav navbar-nav">
     	<% if navbar.include? (:welcome) %>
-			<li class="active hi" id="welcome">
+			<li id="welcome">
 				<a href="/users/<%= current_user.id%>">
 			  Welcome back, <%= current_user.username.capitalize %>! 
 			</a>
 			</li>
 
-			<li class="active hi">
+			<li class="hi">
 					<%= link_to "Users", users_path %>
 			</li>
 			
-			<li class="active hi">
+			<li class="hi">
 				<a href='/partner_requests/<%= current_user.id%>'>
 					My Requests
 				</a>
 			</li>
 			
-			<li class="active hi">
+			<li class="hi">
 				<a href='/goals/<%= current_user.id%>'>
 					My Goals
 				</a>
 			</li>
 
-			<li class="active hi">
+			<li class="hi">
 				<%= link_to "Log Out", sessions_path, method: :delete %>
 			</li>
 	</ul>
@@ -39,10 +39,10 @@
 <!-- 		<div class="collapse navbar-collapse navbar-ex1-collapse"> -->
 			<ul class="nav navbar-nav">
 				
-				<li class="active hi">
+				<li class="hi">
 					<%= link_to "Log In", login_path %>
 				</li>
-				<li class="active hi">
+				<li class="hi">
 					<%= link_to "Sign Up", new_user_path %>
 				</li>
 			<% end %>

@@ -47,4 +47,50 @@ var App = {
 
 $(function() {
   App.initialize();
+  $('button.accept').on('click', acceptPartnership);
+  $('button.deny').on('click', denyPartnership);
 });
+
+
+
+var acceptPartnership = function(event) {
+		console.log('accept');
+		// var parter = event.target.id;
+		// console.log('hi');
+		// var requesterID = $('div.container').attr('id');
+		// var requestData = {
+		// 	partner_request: {
+		// 		requester_id: requesterID,
+		// 		receiver_id: receiverID
+		// 	}
+		// };
+
+		// $.post('/users', requestData).done(function(request) {
+		// 	// Add request to the partner request table
+		// })
+		// $('button.request').hide();
+	}
+
+
+	var denyPartnership = function(event) {
+		console.log('deny');
+		// var parter = event.target.id;
+		// console.log('hi');
+		// var requesterID = $('div.container').attr('id');
+		// var requestData = {
+		// 	partner_request: {
+		// 		requester_id: requesterID,
+		// 		receiver_id: receiverID
+		// 	}
+		// };
+
+		// $.post('/users', requestData).done(function(request) {
+		// 	// Add request to the partner request table
+		// })
+		// $('button.request').hide();
+	}
+
+
+
+
+
