@@ -1,11 +1,17 @@
 <br>
 <div class="thumbnail show">
+	<br>
 <p> <%= @user.first_name %> | <%= @user.username%>
 </p>
 <div class="image-show">
 <%= image_tag(@user.avatar, :alt => "avatar") %>
-</div>
-<br><br><br>
+</div> 
+	<p> I enjoy.. </p>
+	<p>
+<% @user.activities.each do |activity| %>
+	 | <%= activity.name %>
+<% end %> |
+</p>
  <p> <%= @user.email %> </p>
 
 	<% if current_user == @user %>

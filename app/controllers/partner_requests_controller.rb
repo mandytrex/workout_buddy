@@ -10,6 +10,7 @@ class PartnerRequestsController < ApplicationController
 	end
 
 	def show
+		@user = current_user
 		@current_user = current_user.id
 		@partner_requests = PartnerRequest.where(:receiver_id => @current_user)
 		# @user_id = session[:current_user_id]
@@ -21,12 +22,23 @@ class PartnerRequestsController < ApplicationController
 		if partner_request.save
 			render json: partner_request
 		else
-			render json: { errors: partner_request.errors.full_messages}, status: 422
+			render json: { errors: partner_request.errors.full_messages }, status: 422
 		end
+	end
+
+	def update
+		# @current_user = current_user
 	end
 
 	def accept_request
 	end
+
+
+  def destroy
+  	@partner_request = PartnerRequest.destroy(params[:id])
+  	render json: @partner_request
+  end
+
 
 private 
 	def partner_request_params

@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :goals
-  resources :partner_requests
+  resources :partner_requests, only: [:index, :show, :create, :update, :destroy]
 
   # get 'partner_requests' => 'partner_requests#index'
+  put 'users/accept_request' => 'users#accept_request'
 
   get 'home/index' => 'home#index'
 

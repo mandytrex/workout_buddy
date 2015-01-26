@@ -1,7 +1,7 @@
 <h1>Partner Requests#show</h1>
 
 
-<h2>They want to partner up! </h2>
+<h2 id="<%= @user.id %>"><%= @user.first_name %>, they want to partner up! </h2>
 <br>
 
 <% @partner_requests.each do |request| %>
@@ -15,8 +15,10 @@
 			<br>
 			</p>
 
-			<button class="btn btn-primary accept">Accept!</button> <button class="btn btn-primary deny">Deny!</button>
-<br><br>
+			<button class="btn btn-primary accept" id="<%= request.requester.id %>">Accept!</button> <button class="btn btn-primary deny" id="<%= request.requester.id %>">Deny!</button>
+	
+	<br><br>
+	
 		</div>
 	</div>
 
