@@ -48,6 +48,11 @@ gem 'bootstrap_form'
 
 gem 'twilio-ruby', '~> 3.12'
 
+group :assets do
+  gem 'jquery-ui-rails'
+  gem 'jquery-modal-rails'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

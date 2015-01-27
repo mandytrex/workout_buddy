@@ -25,11 +25,16 @@ class GoalsController < ApplicationController
   end
 
 
+  def reminder
+    @user = current_user
+    @goals = current_user.goals
+  end
+
   def edit
   @goal = Goal.find(params[:id])
   end
 
-def update
+  def update
   @goal = Goal.find(params[:id])
     if @goal.update(user_params)
       respond_to do |format|
@@ -39,7 +44,7 @@ def update
     else
       render :edit
   end
-end
+  end
 
   def destroy
     @goal = Goal.find(params[:id])
@@ -50,7 +55,7 @@ end
 
   private 
 	def goal_params
-		params.require(:goal).permit(:goal_name, :theme, :achieved, :image_url, :end_date)
+		params.require(:goal).permit(:goal_name, :theme, :achieved, :image_url, :end_date, :when_text)
 	end
 
 end

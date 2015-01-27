@@ -4,7 +4,8 @@ class CreateGoals < ActiveRecord::Migration
     	t.string :goal_name
         t.string :theme
     	t.boolean :achieved
-    	t.string :end_date
+        t.datetime :when_text
+        t.datetime :end_date
     	t.text :image_url
 
     	t.timestamps

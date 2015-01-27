@@ -20,5 +20,19 @@ class User < ActiveRecord::Base
     partner.partner = user
  	end
 
+ 	def send_text(user, message)
+		@client = Twilio::REST::Client.new
+		twilio_phone_number = '6319047046'
+
+
+			@client.messages.create(
+				from: twilio_phone_number,
+  			to: user,
+  			body: message
+				)
+
+	end
+
+
 
 end

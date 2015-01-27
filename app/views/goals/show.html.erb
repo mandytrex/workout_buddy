@@ -5,7 +5,10 @@
 <% @goals.each do |goal| %>
 
 <% if current_user == @user %>
-<p><%= goal.goal_name %></p>
+
+<p class="goal"><%= goal.goal_name %></p>
+
+
 <%= link_to "Edit Goal", edit_goal_path(goal), :class => 'btn btn-default' %>
 
 <% end %>

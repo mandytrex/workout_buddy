@@ -2,18 +2,18 @@ require 'twilio-ruby'
 
 module Twilio
 
-Twilio.configure do |config|
-  config.account_sid = ENV['TWILIO_ACCOUNT_SID']
-  config.auth_token = ENV['TWILIO_AUTH_TOKEN']
-end
+	def send_text(user, message)
+		@client = Twilio::REST::Client.new
+		twilio_phone_number = '6319047046'
 
-@client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
-# class BitlyWrapper
 
-# 	def self.short(url)
-# 		bitly = Bitly.new(ENV["BITLY_USERNAME"], ENV["BITLY_API_KEY"])
-# 		bitly_result = bitly.shorten(url)
-# 		shortened_url = bitly_result.short_url
-# 	end
+			@client.messages.create(
+				from: twilio_phone_number,
+  			to: user,
+  			body: message
+				)
+
+	end
+
 
 end

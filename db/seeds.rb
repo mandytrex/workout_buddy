@@ -12,22 +12,12 @@ Goal.destroy_all
 PartnerRequest.destroy_all
 Day.destroy_all
 
-mandy = User.create({
-	username: "mandytrex",
-	first_name: "Amanda",
-	email: "amandatrexler1012@gmail.com",
-	age: 23,
-	experience: 4,
-	gender: "female",
-	password: "amanda",
-	password_confirmation: "amanda",
-	avatar: "http://i.imgur.com/lL29IFg.jpg"
-	})
 
 joe = User.create({
 	username: "joenapo",
 	first_name: "Joe",
 	email: "joenapoleon03@gmail.com",
+	phone: '6314187577',
 	age: 21,
 	experience: 5,
 	gender: "male",
@@ -40,36 +30,57 @@ lauren = User.create({
 	username: "laurenprief",
 	first_name: "Lauren",
 	email: "lenpxoxo@aol.com",
+	phone: '6318050547',
 	age: 23,
 	experience: 4,
 	gender: "female",
 	password: "lauren",
 	password_confirmation: "lauren",
-	avatar: "http://i.imgur.com/6W17q9d.jpg"
+	avatar: "http://i.imgur.com/6W17q9d.jpg",
+	partner_id: 3
+	})
+
+
+mandy = User.create({
+	username: "mandytrex",
+	first_name: "Amanda",
+	email: "amandatrexler1012@gmail.com",
+	phone: '6318350711',
+	age: 23,
+	experience: 4,
+	gender: "female",
+	password: "amanda",
+	password_confirmation: "amanda",
+	avatar: "http://i.imgur.com/lL29IFg.jpg",
+	partner_id: lauren.id
 	})
 
 nellie = User.create({
 	username: "ntrexler",
 	first_name: "Nellie",
 	email: "nellietrexler@gmail.com",
+	phone: '5168193697',
 	age: 64,
 	experience: 2,
 	gender: "female",
 	password: "nellie",
 	password_confirmation: "nellie",
-	avatar: "http://i.imgur.com/THYyxel.jpg"
+	avatar: "http://i.imgur.com/THYyxel.jpg",
+	partner_id: 5
 	})
 
 drew = User.create({
 	username: "drewreynolds",
 	first_name: "Drew",
 	email: "amanda.trexler@baruchmail.cuny.edu",
+	phone: '6318350711',
 	age: 22,
 	experience: 3,
 	gender: "male",
 	password: "drew",
 	password_confirmation: "drew",
-	avatar: "http://i.imgur.com/UluUsqx.jpg"
+	avatar: "http://i.imgur.com/UluUsqx.jpg",
+	partner_id: nellie.id
 	})
 
 

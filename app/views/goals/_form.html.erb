@@ -10,6 +10,7 @@
 
     <%= f.text_field :theme, label: 'What category does it fall under?: ',control_col: "col-xs-4" %>
 
+		<%= f.date_field :end_date, label: 'When do you have to complete this?: ',control_col: "col-xs-4" %>
 
     <%= f.text_field :image_url, label: 'Photo (optional): ', control_col: "col-xs-4" %>
 
@@ -18,6 +19,7 @@
 
 	  <%= f.submit "Submit", :id=>"submit" %>
 <br> <br>
+
 
 <% if delete %>
     <%= link_to "Delete Goal", goal_path(@goal), method: :delete, :class => 'btn btn-default' %>
