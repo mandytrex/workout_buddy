@@ -10,6 +10,7 @@ User.destroy_all
 Activity.destroy_all
 Goal.destroy_all
 PartnerRequest.destroy_all
+Day.destroy_all
 
 mandy = User.create({
 	username: "mandytrex",
@@ -18,11 +19,9 @@ mandy = User.create({
 	age: 23,
 	experience: 4,
 	gender: "female",
-	days_available: "Mon, Wed, Fri, Sat, Sun",
-	hours_available: "morning, evening",
 	password: "amanda",
 	password_confirmation: "amanda",
-	image_url: "http://i.imgur.com/lL29IFg.jpg"
+	avatar: "http://i.imgur.com/lL29IFg.jpg"
 	})
 
 joe = User.create({
@@ -32,11 +31,9 @@ joe = User.create({
 	age: 21,
 	experience: 5,
 	gender: "male",
-	days_available: "Mon, Tues, Wed, Thu, Fri, Sat, Sun",
-	hours_available: "morning, evening",
 	password: "joe",
 	password_confirmation: "joe",
-	image_url: "http://i.imgur.com/Getdhxt.jpg"
+	avatar: "http://i.imgur.com/Getdhxt.jpg"
 	})
 
 lauren = User.create({
@@ -46,11 +43,9 @@ lauren = User.create({
 	age: 23,
 	experience: 4,
 	gender: "female",
-	days_available: "Tues, Thu, Sat",
-	hours_available: "morning",
 	password: "lauren",
 	password_confirmation: "lauren",
-	image_url: "http://i.imgur.com/6W17q9d.jpg"
+	avatar: "http://i.imgur.com/6W17q9d.jpg"
 	})
 
 nellie = User.create({
@@ -60,11 +55,9 @@ nellie = User.create({
 	age: 64,
 	experience: 2,
 	gender: "female",
-	days_available: "Mon, Tues, Wed, Thu, Fri, Sat, Sun",
-	hours_available: "morning, afternoon",
 	password: "nellie",
 	password_confirmation: "nellie",
-	image_url: "http://i.imgur.com/THYyxel.jpg"
+	avatar: "http://i.imgur.com/THYyxel.jpg"
 	})
 
 drew = User.create({
@@ -74,11 +67,9 @@ drew = User.create({
 	age: 22,
 	experience: 3,
 	gender: "male",
-	days_available: "Mon, Thu, Sun",
-	hours_available: "evening",
 	password: "drew",
 	password_confirmation: "drew",
-	image_url: "http://i.imgur.com/UluUsqx.jpg"
+	avatar: "http://i.imgur.com/UluUsqx.jpg"
 	})
 
 
@@ -126,6 +117,15 @@ activities = ["Running",
  							"Strength Training"
  							 ]
 
+days = ["Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday",
+				"Saturday",
+				"Sunday"
+			]
+
 
 activities.each do |activity|
 	Activity.create({
@@ -133,3 +133,9 @@ activities.each do |activity|
 	})
 end
 
+
+days.each do |day|
+	Day.create({
+		day: day
+		})
+end

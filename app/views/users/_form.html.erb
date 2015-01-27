@@ -1,61 +1,59 @@
 <!-- this form will be used to add a new user and to edit an existing user -->
-<%= form_for @user do |f| %>
-  <div class="input">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
 
-  <div class="input">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
- </div>
+  <h1>Sign Up:</h1>
+  <br>
+
+<%= bootstrap_form_for(@user, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+
+  <% if edit %>
+
+    <%= f.email_field :email, control_col: "col-xs-5" %>
+
+  <% end %>
+
+    <%= f.text_field :username, label: 'Pick a Username: ', control_col: "col-xs-4" %>
+
+    <%= f.text_field :first_name, label: 'First Name: ',control_col: "col-xs-4" %>
+
+
+    <%= f.text_field :avatar, label: 'Photo URL: ', control_col: "col-xs-5" %>
+
+    <%= f.text_field :age, label: 'Age: ', control_col: "col-xs-2" %>
+
+    <%= f.select :gender, options_for_select([["Select One", ""], "male", "female"]), label: 'Gender: ', control_col: "col-xs-3" %>
+
+  <%= f.select :experience, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), label: 'Experience Level: ', control_col: "col-xs-3" %>
+
+  <%= f.form_group :activity_ids, label: { text: "Select your activities: " } do %>
+    <div class="checkboxes">
+  <%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name, hide_label: true, inline: true %>
+</div>
+  <% end %>
   
-  <div class="input">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
- </div>
-
-  <div class="input">
-    <%= f.label :image_url, "Photo URL" %>
-    <%= f.text_field :image_url %>
- </div>
-
- <div class="input">
-    <%= f.label :age %>
-    <%= f.text_field :age %>
- </div>
-
- <div class="input">
-    <%= f.label :gender, "Gender:" %>
-    <%= f.select :gender, options_for_select([["Select One", ""], "male", "female"]) %>
- </div>
-
-<div class="input">
-  <%= f.label :experience, "Experience Level:" %>
-  <%= f.select :experience, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]) %>
+  <%= f.form_group :day_ids, label: { text: "Availability:" } do %>
+  <div class="checkboxes">
+  <%= f.collection_check_boxes :day_ids, Day.all, :id, :day, hide_label: true, inline: true %>
 </div>
-
-<div class="input">
-<%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name %>
-</div>
+  <% end %>
 
 <% if new_user %>
-  <div class="input">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
- </div>
-  
-  <div class="input">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-<% end %>
+    
+    <%= f.email_field :email, value: 'name@example.com', control_col: "col-xs-5" %>
 
-<% if delete %>
-  <div class="input" id="delete">
-    <%= link_to "Delete User", user_path(@user), method: :delete %>
-  </div>
+    <%= f.password_field :password, control_col: "col-xs-3", label: 'Password: ' %>
+  
+    <%= f.password_field :password_confirmation, label: 'Confirm Password: ', control_col: "col-xs-3" %>
 <% end %>
 
   <%= f.submit "Submit", :id=>"submit" %>
+<br> <br>
+<% if delete %>
+    <%= link_to "Delete Account", user_path(@user), method: :delete, :class => 'btn btn-default' %>
 <% end %>
+<br>
+
+<% end %>
+
+<br><br>
+
+

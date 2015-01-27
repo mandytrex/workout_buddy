@@ -2,23 +2,21 @@
 <html>
 <head>
   <title>WorkoutBuddy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag "home" if controller_name == "home" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<header id='nav-<%= params[:controller]%>'>
-	<ul id="navbar">
-		<% if session[:current_user_id] %>
-			<%= render partial: 'sessions/navbar', locals: { navbar: [:welcome, :profile, :home, :all_users, :all_boards, :search] } %>
-		<% else %>
-			<%= render partial: 'sessions/navbar', locals: { navbar: [:log_in, :sign_up, :home, :all_boards, :search] } %>
-		<% end %>
-	</ul>
-</header>
-<h2> Hello. This is from the application.html.erb page. </h2>
-
+  <% if session[:current_user_id] %>
+      <%= render partial: 'sessions/navbar', locals: { navbar: [:welcome] } %>
+    <% else %>
+      <%= render partial: 'sessions/navbar', locals: { navbar: [:log_in] } %>
+    <% end %>
 <%= yield %>
+
+
 </body>
+
 </html>

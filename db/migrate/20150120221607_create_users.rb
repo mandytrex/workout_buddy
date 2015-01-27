@@ -6,13 +6,12 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :username
     	t.string :password_digest
     	t.integer :age
-        t.string :gender
+      t.string :gender
     	t.string :experience
-    	t.text :image_url
-        t.string :days_available
-        t.string :hours_available
+    	t.text :avatar
 
-        t.references :partner, index: true
+
+      t.references :partner, index: true
 
     	t.timestamps
     end

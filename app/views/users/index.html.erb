@@ -1,13 +1,10 @@
-<h1>Users#index</h1>
-<div class="container">
-<% @users.each do |user| %>
-Name: <%= user.first_name %> <%= user.email %>
-<br>
-Username: <%= user.username %>
-<br>
-<%= image_tag(user.image_url, :alt => "avatar") %>
-<br>
-Partner: <%= user.partner %>
-<br><br>
-<% end %>
+
+<h1>Find a Partner</h1>
+#Have to access the activites/users join table information
+<div class="container" id="<%= @user_id %>">
+  <div class="row row-centered">
+ <div id="users-list"> </div>
+
 </div>
+</div>
+
