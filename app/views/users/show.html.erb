@@ -13,10 +13,19 @@
 <% end %> |
 </p>
  <p> <%= @user.email %> </p>
+<br>
+		<p> <%= link_to "My Current Fitness Goals:", goal_path %> </p>
+		
+			<% @user.goals.each do |goal| %>
+
+			<p> <li> <%= goal.goal_name %> </li> </p>
+
+				<% end %>
+				<%= link_to "New Goal?", new_goal_path %>
+				<br><br>
 
 	<% if current_user == @user %>
-			<%= link_to "Edit Account", edit_user_path(@user), :class => 'btn btn-default' %>
-		
+			<%= link_to "Edit Account", edit_user_path(@user), :class => 'btn btn-default', :id => 'user-show' %>
+		<br><br>
 </div>
-
 <% end %>

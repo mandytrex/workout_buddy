@@ -23,9 +23,7 @@
 			</li>
 			
 			<li class="hi">
-				<a href='/goals/<%= current_user.id%>'>
-					My Goals
-				</a>
+					<%= link_to "My Goals", goal_path(current_user.id) %>
 			</li>
 
 			<li class="hi">

@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@current_user = current_user
+		@goals = @current_user.goals
  end
 
  def new
@@ -42,9 +43,6 @@ end
 def update
 	@user = User.find(params[:id])
 	@user_id = @user.id
-	if @user != current_user
-		redirect_to users_path
-	else
 		if @user.update(user_params)
 			respond_to do |format|
 				format.html { render :show }
@@ -52,7 +50,6 @@ def update
 			end
 		else
 			render :edit
-		end
 	end
 end
 
