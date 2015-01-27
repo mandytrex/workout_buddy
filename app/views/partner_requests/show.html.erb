@@ -9,13 +9,15 @@
 	<div class="col-xs-6 col-md-4 col-centered">
 		<div class="user content thumbnail">
 <br>
-			<p class="request-info"> Request from:
+			<p class="request-info" id="<%= request.id%>"> Request from:
 			<br>
 			<%= request.requester.first_name %> 
 			<br>
 			</p>
 
-			<button class="btn btn-primary accept" id="<%= request.requester.id %>">Accept!</button> <button class="btn btn-primary deny" id="<%= request.requester.id %>">Deny!</button>
+			<button class="btn btn-primary accept" id="<%= request.requester.id %>">Accept!</button> 
+	
+			<button class="btn btn-primary deny" id="<%= request.requester.id %>">Deny!</button>
 	
 	<br><br>
 	

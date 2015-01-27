@@ -60,12 +60,12 @@ var acceptPartnership = function(event) {
 		console.log("Requester: " + requesterID);
 		var currentUser = $('h2').attr('id');
 		console.log("Receiver: " + currentUser);
+		var requestID = $('p.request-info').attr('id');
 		var acceptDataCurrentUser = {
 			user: {
 				partner_id: requesterID
 			}
 		};
-
 		// var acceptDataPartner = {
 		// 	user: {
 		// 		partner_id: currentUser
