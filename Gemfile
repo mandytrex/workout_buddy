@@ -62,6 +62,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails_12factor'
 
 gem "rails-assets-underscore", source: "https://rails-assets.org"
 gem "rails-assets-backbone", source: "https://rails-assets.org"
