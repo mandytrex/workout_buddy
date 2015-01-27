@@ -13,11 +13,12 @@ class User < ActiveRecord::Base
 
 	belongs_to :partner, class_name: "User", foreign_key: "partner_id"
 
-	# def make_partner_request(user_id)
- #    user = User.find(user_id)
- #    user.goals.push(self)
- #    user.partner.goals.push(self)
- #  end
+	def make_partnership(user_id)
+		user = User.find(user_id)
+    partner_id = user.partner.id
+    partner = User.find(partner_id)
+    partner.partner = user
+ 	end
 
 
 end
