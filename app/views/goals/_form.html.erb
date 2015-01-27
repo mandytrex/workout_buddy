@@ -1,0 +1,31 @@
+<!-- this form will be used to add a new user and to edit an existing user -->
+
+  <h1>Your Goal:</h1>
+  <br>
+
+<%= bootstrap_form_for(@goal, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+
+
+    <%= f.text_field :goal_name, label: 'What goal do you want to accomplish?: ', control_col: "col-xs-4" %>
+
+    <%= f.text_field :theme, label: 'What category does it fall under?: ',control_col: "col-xs-4" %>
+
+
+    <%= f.text_field :image_url, label: 'Photo (optional): ', control_col: "col-xs-4" %>
+
+    <%= f.check_box :achieved, label: "Has this goal been completed? " %>
+
+
+	  <%= f.submit "Submit", :id=>"submit" %>
+<br> <br>
+
+<% if delete %>
+    <%= link_to "Delete Goal", goal_path(@goal), method: :delete, :class => 'btn btn-default' %>
+<% end %>
+
+<br>
+
+<% end %>
+
+<br>
+<br>
