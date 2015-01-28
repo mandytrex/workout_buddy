@@ -37,7 +37,6 @@ lauren = User.create({
 	password: "lauren",
 	password_confirmation: "lauren",
 	avatar: "http://i.imgur.com/6W17q9d.jpg",
-	partner_id: 3
 	})
 
 
@@ -52,7 +51,6 @@ mandy = User.create({
 	password: "amanda",
 	password_confirmation: "amanda",
 	avatar: "http://i.imgur.com/lL29IFg.jpg",
-	partner_id: lauren.id
 	})
 
 nellie = User.create({
@@ -66,7 +64,6 @@ nellie = User.create({
 	password: "nellie",
 	password_confirmation: "nellie",
 	avatar: "http://i.imgur.com/THYyxel.jpg",
-	partner_id: 5
 	})
 
 drew = User.create({
@@ -80,13 +77,31 @@ drew = User.create({
 	password: "drew",
 	password_confirmation: "drew",
 	avatar: "http://i.imgur.com/UluUsqx.jpg",
-	partner_id: nellie.id
+	})
+
+natalia = User.create({
+	username: "nbarrios",
+	first_name: "Natalia",
+	email: "amanda.trexler@baruchmail.cuny.edu",
+	phone: '6318350711',
+	age: 22,
+	experience: 2,
+	gender: "female",
+	password: "natalia",
+	password_confirmation: "natalia",
+	avatar: "http://i.imgur.com/2yRBAkw.jpg",
 	})
 
 
 PartnerRequest.create({
 	requester_id: mandy.id,
 	receiver_id: joe.id,
+	message: "Please be my partner!"
+	})
+
+PartnerRequest.create({
+	requester_id: joe.id,
+	receiver_id: mandy.id,
 	message: "Please be my partner!"
 	})
 
@@ -100,6 +115,18 @@ PartnerRequest.create({
 	requester_id: drew.id,
 	receiver_id: nellie.id,
 	message: "You seem cool, let's partner up."
+	})
+
+PartnerRequest.create({
+	requester_id: mandy.id,
+	receiver_id: drew.id,
+	message: "Let's work out together."
+	})
+
+PartnerRequest.create({
+	requester_id: joe.id,
+	receiver_id: natalia.id,
+	message: "Hey."
 	})
 
 activities = ["Running",

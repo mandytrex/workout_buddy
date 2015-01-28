@@ -30,9 +30,6 @@ class PartnerRequestsController < ApplicationController
 		# @current_user = current_user
 	end
 
-	def accept_request
-	end
-
   def destroy
   	@partner_request = PartnerRequest.destroy(params[:id])
   	render json: @partner_request

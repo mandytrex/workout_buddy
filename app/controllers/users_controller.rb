@@ -53,7 +53,18 @@ def update
 	end
 end
 
-	
+
+def accept_request
+	# @user_id = session[:current_user_id]
+	# @partner = current_user.partner
+	# @partner.make_partnership(@user_id)
+	respond_to do |format|
+				format.html { render :show }
+				format.json { render json: @user }
+			end
+end
+
+
 private 
 	def user_params
 		params.require(:user).permit(:username, :partner_id, :first_name, :email, :avatar, :age, :gender, :experience, :password, :password_confirmation, activity_ids:[], day_ids:[])

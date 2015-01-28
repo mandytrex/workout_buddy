@@ -13,11 +13,11 @@ class User < ActiveRecord::Base
 
 	belongs_to :partner, class_name: "User", foreign_key: "partner_id"
 
-	def make_partnership(user_id)
-		user = User.find(user_id)
-    partner_id = user.partner.id
-    partner = User.find(partner_id)
+	def make_partnership(current_user_id)
+		user = User.find(current_user_id)
+		partner = user.partner
     partner.partner = user
+    partner.save
  	end
 
  	def send_text(user, message)

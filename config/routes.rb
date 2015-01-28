@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :users
+  resources :users do
+    member do
+    put :accept_request
+  end
+end
   resources :goals
   resources :partner_requests, only: [:index, :show, :create, :update, :destroy]
 
   # get 'partner_requests' => 'partner_requests#index'
-  put 'users/accept_request' => 'users#accept_request'
+  # put 'users/accept_request' => 'users#accept_request'
 
   get 'home/index' => 'home#index'
 

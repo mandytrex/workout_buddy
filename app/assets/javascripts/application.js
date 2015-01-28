@@ -48,12 +48,10 @@ var App = {
 $(function() {
   App.initialize();
   $('button.accept').on('click', acceptPartnership);
-  // $('button.deny').on('click', denyPartnership);
+  $('button.deny').on('click', denyPartnership);
 });
 
-
-// THIS NEEDS TO ACCEPT PARTNERSHIP, ADD PARNTER ID TO EACH PARTNER USER 
-// & DELETE THE REQUEST
+//PARTNER REQUESTS MAKE MORE SENSE AS TEMPLATE VIEW SO IT CAN UPDATE IN REAL TIME
 var acceptPartnership = function(event) {
 		console.log('accept');
 		var requesterID = event.target.id;
@@ -66,41 +64,48 @@ var acceptPartnership = function(event) {
 				partner_id: requesterID
 			}
 		};
-		// var acceptDataPartner = {
-		// 	user: {
-		// 		partner_id: currentUser
-		// 	}
-		// };
-		// $.post('/users', acceptDataCurrentUser).done(function(accept) {
+		var acceptDataPartner = {
+			user: {
+				partner_id: currentUser
+			}
+		};
 			$.ajax({
-				url: '/users/' + currentUser,
+				url: '/users/' + currentUser + 'accept_request',
 				type: 'put',
-				data: acceptDataCurrentUser
+				data: acceptDataCurrentUser,
+				success: function() {
+					$.ajax({
+						url: '/users/' + requesterID + 'accept_request',
+						type: 'put',
+						data: acceptDataPartner,
+						success: function() {
+							$.ajax({
+								url: '/partner_requests/' + requestID,
+								type: 'post',
+								dataType: 'json',
+								data: { '_method': 'delete'},
+								success: function() {
+									window.location.reload(true);
+								}
+							});
+						}
+					});
+					console.log('hello');
+				}
 			});
 	};
 
-
-// THIS NEEDS TO DELETE THE PARTNERSHIP REQUEST
-	// var denyPartnership = function(event) {
-	// 	console.log('deny');
-	// 	var requesterID = event.target.id;
-	// 	console.log("Requester: " + requesterID);
-	// 	var receiverID = $('h2').attr('id');
-	// 	console.log("Receiver: " + receiverID);
-		// var denyData = {
-		// 	user: {
-		// 		requester_id: requesterID,
-		// 		receiver_id: receiverID
-		// 	}
-		// };
-
-		// $.post('/users', requestData).done(function(request) {
-		// 	// Add request to the partner request table
-		// })
-		// $('button.request').hide();
-	// }
-
-
-
-
-
+var denyPartnership = function(event) {
+		console.log('deny');
+		var requestID = $('p.request-info').attr('id');
+		console.log(requestID);
+			$.ajax({
+				url: '/partner_requests/' + requestID,
+				type: 'post',
+				dataType: 'json',
+				data: { '_method': 'delete'},
+				success: function() {
+					window.location.reload(true);
+				}
+			});
+	};
