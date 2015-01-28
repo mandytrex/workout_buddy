@@ -31,14 +31,14 @@ gem 'simplecov', :require => false, :group => :test
 
 gem 'backbars', '~> 0.0.11'
 
-gem 'devise'
+# gem 'devise'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'google_places', '~> 0.27.0'
+# gem 'google_places', '~> 0.27.0'
 
-gem 'yelpster', '~> 1.3.0'
+# gem 'yelpster', '~> 1.3.0'
 
 gem "paperclip", "~> 4.2"
 
@@ -48,10 +48,10 @@ gem 'bootstrap_form'
 
 gem 'twilio-ruby', '~> 3.12'
 
-group :assets do
-  gem 'jquery-ui-rails'
-  gem 'jquery-modal-rails'
-end
+# group :assets do
+#   gem 'jquery-ui-rails'
+#   gem 'jquery-modal-rails'
+# end
 
 # Use unicorn as the app server
 # gem 'unicorn'
