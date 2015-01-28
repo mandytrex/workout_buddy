@@ -23,11 +23,10 @@
   
 **Gems**  
 
-gem 'twilio-ruby', '~> 3.12'
-1. [gem 'twitter-bootstrap-rails'](https://github.com/jonbuda/miro)  
-2. [gem 'bootstrap_form'](https://github.com/cloudinary/cloudinary_gem) 
-3. [gem 'backbars'](https://github.com/rcullito/searchbing)  
-4. [gem 'twilio-ruby'](https://github.com/rcullito/searchbing)  
+1. [gem 'twitter-bootstrap-rails'](https://github.com/seyhunak/twitter-bootstrap-rails)  
+2. [gem 'bootstrap_form'](https://github.com/bootstrap-ruby/rails-bootstrap-forms)  
+3. [gem 'backbars'](https://github.com/DrRobotmck/Backbars)  
+4. [gem 'twilio-ruby'](https://github.com/twilio/twilio-ruby)  
   
 **Testing**  
 To come...  
