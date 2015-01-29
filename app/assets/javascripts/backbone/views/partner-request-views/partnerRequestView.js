@@ -25,7 +25,10 @@ App.Views.PartnerRequestView = Backbone.View.extend({
 	changeToAccepted: function() {
 		console.log(this);
 		this.$el.empty();
-		this.$el.html("accepted!");
+		acceptedDiv = $('<div>').addClass('thumbnail request-view');
+		accepted = $('<h3>').text('Accepted!');
+		acceptedDiv.append(accepted)
+		this.$el.append(acceptedDiv);
 	},
 	denyPartnership: function() {
 		console.log('deny');

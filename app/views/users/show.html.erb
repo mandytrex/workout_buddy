@@ -7,11 +7,10 @@
 <%= image_tag(@user.avatar, :alt => "avatar") %>
 
 <% if @user.partner != nil %>
-<br>
+<br><br>
 <p> Partner: <a href='/users/<%=@user.partner.id%>'><%= @user.partner.first_name %> </a> </p>
 <% end %>
 </div> 
-<br><br><br>
 	<p> I enjoy.. <br>
 <% @user.activities.each do |activity| %>
 	 | <%= activity.name %>
