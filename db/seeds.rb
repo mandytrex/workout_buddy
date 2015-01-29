@@ -95,38 +95,32 @@ natalia = User.create({
 
 PartnerRequest.create({
 	requester_id: mandy.id,
-	receiver_id: joe.id,
-	message: "Please be my partner!"
+	receiver_id: joe.id
 	})
 
 PartnerRequest.create({
 	requester_id: joe.id,
-	receiver_id: mandy.id,
-	message: "Please be my partner!"
+	receiver_id: mandy.id
 	})
 
 PartnerRequest.create({
 	requester_id: nellie.id,
-	receiver_id: lauren.id,
-	message: "Want to be partners?"
+	receiver_id: lauren.id
 	})
 
 PartnerRequest.create({
 	requester_id: drew.id,
-	receiver_id: nellie.id,
-	message: "You seem cool, let's partner up."
+	receiver_id: nellie.id
 	})
 
 PartnerRequest.create({
 	requester_id: mandy.id,
-	receiver_id: drew.id,
-	message: "Let's work out together."
+	receiver_id: drew.id
 	})
 
 PartnerRequest.create({
 	requester_id: joe.id,
-	receiver_id: natalia.id,
-	message: "Hey."
+	receiver_id: natalia.id
 	})
 
 activities = ["Running",
