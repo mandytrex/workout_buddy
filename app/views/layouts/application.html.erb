@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <% if session[:current_user_id] %>
       <%= render partial: 'sessions/navbar', locals: { navbar: [:welcome] } %>
     <% else %>

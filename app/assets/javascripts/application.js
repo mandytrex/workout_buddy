@@ -47,65 +47,64 @@ var App = {
 
 $(function() {
   App.initialize();
-  $('button.accept').on('click', acceptPartnership);
-  $('button.deny').on('click', denyPartnership);
 });
 
-//PARTNER REQUESTS MAKE MORE SENSE AS TEMPLATE VIEW SO IT CAN UPDATE IN REAL TIME
-var acceptPartnership = function(event) {
-		console.log('accept');
-		var requesterID = event.target.id;
-		console.log("Requester: " + requesterID);
-		var currentUser = $('h2').attr('id');
-		console.log("Receiver: " + currentUser);
-		var requestID = $('p.request-info').attr('id');
-		var acceptDataCurrentUser = {
-			user: {
-				partner_id: requesterID
-			}
-		};
-		var acceptDataPartner = {
-			user: {
-				partner_id: currentUser
-			}
-		};
-			$.ajax({
-				url: '/users/' + currentUser + 'accept_request',
-				type: 'put',
-				data: acceptDataCurrentUser,
-				success: function() {
-					$.ajax({
-						url: '/users/' + requesterID + 'accept_request',
-						type: 'put',
-						data: acceptDataPartner,
-						success: function() {
-							$.ajax({
-								url: '/partner_requests/' + requestID,
-								type: 'post',
-								dataType: 'json',
-								data: { '_method': 'delete'},
-								success: function() {
-									window.location.reload(true);
-								}
-							});
-						}
-					});
-					console.log('hello');
-				}
-			});
-	};
+// //PARTNER REQUESTS MAKE MORE SENSE AS TEMPLATE VIEW SO IT CAN UPDATE IN REAL TIME
+// var acceptPartnership = function(event) {
+// 		console.log('accept');
+// 		var requesterID = event.target.id;
+// 		console.log("Requester: " + requesterID);
+// 		var currentUser = $('h2').attr('id');
+// 		console.log("Receiver: " + currentUser);
+// 		var requestID = $('p.request-info').attr('id');
+// 		var acceptDataCurrentUser = {
+// 			user: {
+// 				partner_id: requesterID
+// 			}
+// 		};
+// 		var acceptDataPartner = {
+// 			user: {
+// 				partner_id: currentUser
+// 			}
+// 		};
+// 			$.ajax({
+// 				url: '/users/' + currentUser + 'accept_request',
+// 				type: 'put',
+// 				data: acceptDataCurrentUser,
+// 				success: function() {
+// 					$.ajax({
+// 						url: '/users/' + requesterID + 'accept_request',
+// 						type: 'put',
+// 						data: acceptDataPartner,
+// 						success: function() {
+// 							$.ajax({
+// 								url: '/partner_requests/' + requestID,
+// 								type: 'post',
+// 								dataType: 'json',
+// 								data: { '_method': 'delete'},
+// 								success: function() {
+// 									window.location.reload(true);
+// 								}
+// 							});
+// 						}
+// 					});
+// 					console.log('hello');
+// 				}
+// 			});
+// 	};
 
-var denyPartnership = function(event) {
-		console.log('deny');
-		var requestID = $('p.request-info').attr('id');
-		console.log(requestID);
-			$.ajax({
-				url: '/partner_requests/' + requestID,
-				type: 'post',
-				dataType: 'json',
-				data: { '_method': 'delete'},
-				success: function() {
-					window.location.reload(true);
-				}
-			});
-	};
+
+// var denyPartnership = function(event) {
+// 		console.log('deny');
+// 		var requestID = $('p.request-info').attr('id');
+// 		console.log(requestID);
+// 			$.ajax({
+// 				url: '/partner_requests/' + requestID,
+// 				type: 'post',
+// 				dataType: 'json',
+// 				data: { '_method': 'delete'},
+// 				success: function() {
+// 					window.location.reload(true);
+// 				}
+// 			});
+// 	};

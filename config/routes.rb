@@ -1,20 +1,16 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :users do
-    member do
-    put :accept_request
-  end
-end
+  resources :users
   resources :goals
   resources :partner_requests, only: [:index, :show, :create, :update, :destroy]
-
-  # get 'partner_requests' => 'partner_requests#index'
-  # put 'users/accept_request' => 'users#accept_request'
-
+  
+  post 'partner_requests/accept_request' => 'partner_requests#accept_request'
   get 'home/index' => 'home#index'
 
   get 'goals/reminder' => 'goals#reminder'
+
+  # get 'partner_requests/get_requests' => 'partner_requests#get_requests'
 
   get 'sessions/new' => 'sessions#new', as: 'login'
   post 'sessions'    => 'sessions#create'

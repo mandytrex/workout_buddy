@@ -1,21 +1,17 @@
 <div class="thumbnail request-view">
-<a href="/users/{{id}}">
-<div class="user-image">
-  <img src="{{avatar}}"/>
-</div></a>
-
-<div class="user">
-  <h1>
-    Requester: {{requester_id}}
-  </h1>
-  <p>
-    Receiver: {{receiver_id}}
-  </p>
-  <p>
-    Message: {{message}}
-  </p>
-  <p>
-  Sent at: {{created_at}}
-  </p>
-</div>
-</div>
+<br>
+  <a href="/users/{{requester.id}}">
+    <div class="user-request-image">
+      <img src="{{requester.avatar}}"/>
+    </div>
+  </a>
+<br>
+<br>
+  <h3> Request From: {{ requester.first_name }} </h3>
+    <div class="request-buttons">
+      <button class="btn btn-primary accept" id="<%= request.requester.id %>">Accept!</button> 
+      <button class="btn btn-primary deny" id="<%= request.requester.id %>">Deny!</button>
+    </div>
+<br>
+<br>
+  

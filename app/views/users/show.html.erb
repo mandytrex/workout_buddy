@@ -5,15 +5,19 @@
 </p>
 <div class="image-show">
 <%= image_tag(@user.avatar, :alt => "avatar") %>
+
+<% if @user.partner != nil %>
+<br>
+<p> Partner: <a href='/users/<%=@user.partner.id%>'><%= @user.partner.first_name %> </a> </p>
+<% end %>
 </div> 
-	<p> I enjoy.. </p>
-	<p>
+<br><br><br>
+	<p> I enjoy.. <br>
 <% @user.activities.each do |activity| %>
 	 | <%= activity.name %>
 <% end %> |
 </p>
- <p> <%= @user.email %> </p>
-<br>
+ <p> Contact: <%= @user.email %> </p>
 		<p> <%= link_to "My Current Fitness Goals:", goal_path %> </p>
 		
 			<% @user.goals.each do |goal| %>
@@ -26,6 +30,6 @@
 
 	<% if current_user == @user %>
 			<%= link_to "Edit Account", edit_user_path(@user), :class => 'btn btn-default', :id => 'user-show' %>
-		<br><br>
+		
 </div>
 <% end %>

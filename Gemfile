@@ -48,6 +48,8 @@ gem 'bootstrap_form'
 
 gem 'twilio-ruby', '~> 3.12'
 
+gem "font-awesome-rails"
+
 # group :assets do
 #   gem 'jquery-ui-rails'
 #   gem 'jquery-modal-rails'

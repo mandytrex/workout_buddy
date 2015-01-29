@@ -14,6 +14,7 @@
  *= require_self
  *= require bootstrap.min
  *= require rails_bootstrap_forms
+ *= require font-awesome
  */
 
 @import url(http://fonts.googleapis.com/css?family=Dosis|News+Cycle|Waiting+for+the+Sunrise|Reenie+Beanie|Shadows+Into+Light|Architects+Daughter|Indie+Flower|Coming+Soon);
@@ -31,6 +32,33 @@
 
 .checkboxes {
 	margin-right: 60%;
+}
+
+.goal-div {
+	width: 50%;
+  margin: 0 auto;
+  text-decoration: underline;
+}
+
+.indiv-goal-div {
+	width: 60%;
+  margin: 0 auto;
+}
+
+.goal-buttons {
+	width: 12%;
+}
+
+#new-goal-button {
+	margin-left: 90px;
+	width: 118px;
+	text-align: left;
+	font-weight: bold;
+}
+
+#edit-goal-button {
+	width: 85px;
+	font-weight: bold;
 }
 
 /*#signup {
@@ -80,6 +108,22 @@
 	height: 100%;
 }
 
+.user-request-image {
+	max-width: 100px;
+	max-height: 100px;
+	margin-left: 40%;
+}
+
+.request-buttons {
+	margin-left: 0;
+	width: 325px;
+}
+
+.user-request-image img {
+	width: 100%;
+	height: 100%;
+}
+
 .request-view {
 	text-align: center;
 	margin-left: 15%;
@@ -101,14 +145,14 @@
 
 .show {
 	width: 600px;
-	max-height: 800px;
+	height: 750px;
 	text-align: center;
 	margin-left: 30%;
 }
 
 /* resize images */
 .show img {
-    width: 80%;
+    width: 70%;
     height: auto;
 }
 

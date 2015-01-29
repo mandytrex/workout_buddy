@@ -178,19 +178,4 @@ days.each do |day|
 		})
 end
 
-# amanda.activities.push("Running")
-
-# nellie.activities.push("Walking")
-
-# lauren.activities.push("Strength Training")
-# lauren.activities.push("Kick-Boxing")
-
-# drew.activities.push("Swimming")
-
-
-# joe.activities.push("Wrestling")
-# joe.activities.push("Running")
-# joe.activities.push("Weightlifting")
-
-# natalia.activities.push("Dance")
 
