@@ -44,6 +44,9 @@ App.Views.PartnerRequestView = Backbone.View.extend({
 		// fix this so maybe it removes the element then a pop up says "Partnership denied"
 		console.log(this);
 		this.$el.empty();
-		this.$el.html("Denied");
+		deniedDiv = $('<div>').addClass('thumbnail request-view');
+		denied = $('<h3>').text('Denied!');
+		deniedDiv.append(denied);
+		this.$el.html(deniedDiv);
 	},
 })

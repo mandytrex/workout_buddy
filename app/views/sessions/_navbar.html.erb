@@ -1,9 +1,18 @@
-<nav class ="navbar navbar-default navbar-static" role="navigation">
+<nav class ="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
     	<a href="/" class="navbar-brand" id="teal">Workout Buddy</a>
 		</div>
 <!-- 		<div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+		<!-- below allows for responsive navbar -->
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+	    	  <span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	   </button>
+
+	<div class="collapse navbar-collapse" id="demo-navbar-collapse">
     <ul class="nav navbar-nav">
     	<% if navbar.include? (:welcome) %>
 			<li id="welcome">
@@ -44,5 +53,6 @@
 			<% end %>
 
 			</ul>
+		</div>
 	</div>
 </nav>
